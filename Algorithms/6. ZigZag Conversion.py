@@ -5,16 +5,9 @@ def convert( s: str, numRows: int) -> str:
     # Output: Linearize the zig zagged string matrix
     # input: string and number of rows in which to make the string zag zag
     # Algorithm steps:
-    # Two special cases identified: when n =1 return the string when n = 2 the zig zag arrangement will be opposite (desc becomes asc) in each new column
-    # We first code without these two special cases:
-    # 1. make one array containing non-diagonal called ND values
-    # 2. make other array with diagonal D values
-    # 3. until there are values in array of string(use while true) put n values in ND and then n-2 values in D
-    # 4. Then make new string by appending s.t for  if i%n ==0 then append all thsoe strings. For next strings take e.g. i%n ==1 take values but insert
-    # n-2-1. When it is tiem to pick the next element from thsi D array now the. In D array always reverse the string ebfore adding to D string then pick teh second one afetr
-    # first index
 
  # d and nd list /diagonal and nondiagonal lists
+    #remove all prints if pasting in leetcode
     if numRows == 1:
         return s
     step = 1
