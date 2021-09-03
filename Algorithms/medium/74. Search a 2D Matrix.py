@@ -4,9 +4,7 @@ def binary_search_recursive(array, element, start, end):
         return -1
 
     mid = (start + end) // 2
-    print(start,end,mid)
     if element == array[mid]:
-        print('here i am')
         return mid
 
     if element < array[mid]:
