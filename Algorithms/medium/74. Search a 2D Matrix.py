@@ -5,6 +5,7 @@ def binary_search_recursive(array, element, start, end):
 
     mid = (start + end) // 2
     if element == array[mid]:
+
         return mid
 
     if element < array[mid]:
