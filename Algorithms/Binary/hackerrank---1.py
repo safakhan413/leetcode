@@ -3,7 +3,8 @@ def find_substring(s):
         substring = s[:i]
 
         repeats = len(s) // len(substring)
-
+        print(repeats,s,substring )
+        print(substring * repeats)
         if substring * repeats == s:
             return (substring, repeats)
 
@@ -48,7 +49,7 @@ def findSmallestRepeatedSubsequence(primary, secondary):
 
 
 p = 'ATCATC'
-s = 'ATCATCATCATCGG'
+s = 'ATCATCATCATC'
 
 print(findSmallestRepeatedSubsequence(p,s))
 
