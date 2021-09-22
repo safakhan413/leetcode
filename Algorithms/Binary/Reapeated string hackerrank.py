@@ -38,6 +38,7 @@ def repeatedString(s, n):
             count_for_rpt_times +=1
     return count_for_rpt_times
 
+### solution num 2
 
     # newS = s*rpt_times + s[0:remainder]
     # print(newS)
