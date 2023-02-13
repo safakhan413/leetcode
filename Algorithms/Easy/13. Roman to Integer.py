@@ -37,5 +37,5 @@ def romanToInt(s):
     return intVal
 
 
-s = "MCMXCIV"
+s = "III"
 print(romanToInt(s))
