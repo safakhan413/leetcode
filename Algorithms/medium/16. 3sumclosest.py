@@ -9,7 +9,11 @@ def threeSumClosest(nums, target):
     Steps:
         1st attempt:
         step1: make a set of 3 from list. Use combinations from itertools
-        use a for loop to sum each combination and 
+        2. use a for loop to sum each combination 
+        3. take an absolute abs
+        4. initialize mindiff as +inf
+        5. if abs is less than mindif then set mindiff to abs
+        6. keep doing for all and return mindiff eventually
 
 
     '''
