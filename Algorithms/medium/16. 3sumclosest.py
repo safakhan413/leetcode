@@ -40,18 +40,18 @@ def threeSumClosest(nums, target):
     for x in range(t-2):
         i=x+1
         j=t-1
-        print(nums)
+        # print(nums)
         while i<j:
             s1=nums[x]+nums[i]+nums[j]
-            print(x,i,j,'here')
+            # print(x,i,j,'here')
             if s1==target:
                 return target
             if abs(target-s)>abs(target-s1):
-                print('im s1', abs(target-s), abs(target-s1))
+                # print('im s1', abs(target-s), abs(target-s1))
 
                 #print(x,i,j,'-------',s1)
                 s=s1 ##to find lowest sum
-            print('final s1', s1)
+            # print('final s1', s1)
             #since its a sorted ARRAY, IF S1 < target that means the calculated minsum is greater than target and so left ptr needs to advance to include bigger values, reverse holds in else condition
             if s1<target:
                 i+=1
