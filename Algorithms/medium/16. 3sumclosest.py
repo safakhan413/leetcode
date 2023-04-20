@@ -19,21 +19,45 @@ def threeSumClosest(nums, target):
     '''
     # print("hi i'm here")
     # print(nums)
-    minDiff = math.inf
-    comb = combinations(nums,3)
-    minSum = -math.inf
-    # print(list(comb))
-    for i in list(comb):
-        print("why not here")
-        newSum = sum(i)
-        print(i,newSum)
-        newdiff = abs(target-newSum)
-        print('im new diff:', newdiff)
-        if newdiff < minDiff:
-            minDiff = newdiff
-            minSum = newSum
-    print('min sum is: ',minSum )
-    return minSum
+    # minDiff = math.inf
+    # comb = combinations(nums,3)
+    # minSum = -math.inf
+    # # print(list(comb))
+    # for i in list(comb):
+    #     print("why not here")
+    #     newSum = sum(i)
+    #     print(i,newSum)
+    #     newdiff = abs(target-newSum)
+    #     print('im new diff:', newdiff)
+    #     if newdiff < minDiff:
+    #         minDiff = newdiff
+    #         minSum = newSum
+    # print('min sum is: ',minSum )
+    # return minSum
+    s=float('inf')
+    t=len(nums)
+    nums.sort()
+    for x in range(t-2):
+        i=x+1
+        j=t-1
+        print(nums)
+        while i<j:
+            s1=nums[x]+nums[i]+nums[j]
+            print(x,i,j,'here')
+            if s1==target:
+                return target
+            if abs(target-s)>abs(target-s1):
+                print('im s1', abs(target-s), abs(target-s1))
+
+                #print(x,i,j,'-------',s1)
+                s=s1 ##to find lowest sum
+            print('final s1', s1)
+            #since its a sorted ARRAY, IF S1 < target that means the calculated minsum is greater than target and so left ptr needs to advance to include bigger values, reverse holds in else condition
+            if s1<target:
+                i+=1
+            else:
+                j-=1
+    return s
 
 
 nums = [-1,2,1,-4]
