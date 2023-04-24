@@ -24,6 +24,13 @@ def rectangle_overlap(a, b):
     # x = set((-3,5))
     # y = set((-3,2))
     # print(x[0], x[1])
+    #find two lowest 
+    ltlist = [list(x) for x in a]
+    rtlist = [list(x) for x in b]
+
+    print(ltlist, rtlist)
+
+
 
 a = [(-3,5), (-3,2),(0,5),(0,2)]
 b = [(-1,4), (3,4), (3,1), (-1,1)]
