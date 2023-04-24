@@ -12,6 +12,8 @@
 # a = [(-3,5), (-3,2),(0,5),(0,2)]
 # b = [(-1,4), (3,4), (3,1), (-1,1)]
 
+from operator import itemgetter
+
 def rectangle_overlap(a, b):
     '''Algo
 
@@ -25,10 +27,16 @@ def rectangle_overlap(a, b):
     # y = set((-3,2))
     # print(x[0], x[1])
     #find two lowest 
-    ltlist = [list(x) for x in a]
-    rtlist = [list(x) for x in b]
+    # ltlist = [list(x) for x in a]
+    # rtlist = [list(x) for x in b]
+    
+    print(sorted(rtlist, key=itemgetter(0))) 
 
-    print(ltlist, rtlist)
+    # print(ltlist, rtlist)
+
+    #choose two min xs to get lt_lt to get coordinates of left side of left
+
+
 
 
 
