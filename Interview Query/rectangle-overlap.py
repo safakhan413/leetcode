@@ -14,8 +14,16 @@
 
 def rectangle_overlap(a, b):
     '''Algo
-    
+
+    output: true if the rectangles intersect, otherwise false
+    input: two lists representing coordinates of the rectangles
+    Steps: find top, bottom, left, right 
+    left is with 2 lowest x coordinates. 
     '''
+    # print(type(a[0]))
+    # x = set((-3,5))
+    # y = set((-3,2))
+    # print(x[0], x[1])
 
 a = [(-3,5), (-3,2),(0,5),(0,2)]
 b = [(-1,4), (3,4), (3,1), (-1,1)]
