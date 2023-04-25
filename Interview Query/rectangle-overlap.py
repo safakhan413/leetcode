@@ -115,6 +115,6 @@ a = [(-3,5), (-3,2),(0,5),(0,2)]
 b = [(-1,4), (3,4), (3,1), (-1,1)]
 
 
-rectangle_overlap(a,b)
+print(rectangle_overlap(a,b))
 # dothey= rectangle_overlap(a,b)
 # print(dothey)
