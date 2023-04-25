@@ -14,6 +14,14 @@
 
 from operator import itemgetter
 
+def find_left_range_rectangle(alist):
+    a_lt_range = []
+    for i in range(alist[0][1], alist[1][1]+1):
+        print(i)
+        a_lt_range.append([alist[0][0], i])
+    return a_lt_range
+
+
 def rectangle_overlap(a, b):
     '''Algo
 
@@ -33,16 +41,13 @@ def rectangle_overlap(a, b):
     alist = [list(x) for x in lt]
     blist = [list(x) for x in rt]
     # #left side of reca 
+    a_lt = find_left_range_rectangle(alist)
+    b_lt = find_left_range_rectangle(blist)
+
+    print(a_lt)
 
 
-    a_lt_range = []
-    # print(alist[0][1])
 
-    # print(alist[0][1], alist[1,1])
-    for i in range(alist[0][1], alist[1][1]):
-
-        a_lt_range.append(alist[0][i])
-    # print(a_lt_range)
     # print(sorted(b, key=listitemgetter(0,1)))
 
     # print(ltlist, rtlist)
