@@ -17,9 +17,36 @@ from operator import itemgetter
 def find_left_range_rectangle(alist):
     a_lt_range = []
     for i in range(alist[0][1], alist[1][1]+1):
+        # print(i)
+        a_lt_range.append([alist[0][0], i])
+    return a_lt_range
+
+def find_right_range_rectangle(alist):
+    a_lt_range = []
+    for i in range(alist[2][1], alist[3][1]+1):
+        # print(i)
+        a_lt_range.append([alist[2][0], i])
+    return a_lt_range
+
+def find_top_range_rectangle(alist):
+    a_lt_range = []
+    for i in range(alist[0][1], alist[1][1]+1):
         print(i)
         a_lt_range.append([alist[0][0], i])
     return a_lt_range
+
+def find_bottom_range_rectangle(alist):
+    a_lt_range = []
+    for i in range(alist[0][1], alist[1][1]+1):
+        print(i)
+        a_lt_range.append([alist[0][0], i])
+    return a_lt_range
+
+
+
+
+
+
 
 
 def rectangle_overlap(a, b):
@@ -40,11 +67,17 @@ def rectangle_overlap(a, b):
     rt = sorted(b, key=itemgetter(0,1))
     alist = [list(x) for x in lt]
     blist = [list(x) for x in rt]
-    # #left side of reca 
+    print(alist,blist)
+    #left sides of recatangles both lists 
     a_lt = find_left_range_rectangle(alist)
     b_lt = find_left_range_rectangle(blist)
+    #right side of rectangle both lists 
+    a_rt = find_right_range_rectangle(alist)
+    b_rt = find_right_range_rectangle(blist)
 
-    print(a_lt)
+
+
+    print( 'im rt range',a_rt)
 
 
 
