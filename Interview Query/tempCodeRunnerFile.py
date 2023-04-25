@@ -1,3 +1,2 @@
-    # for i in range(alist[0][1], alist[1,1]):
-    #     a_lt_range.append(alist[0][i])
-    # print(a_lt_range)
+    # a_bott = find_bottom_range_rectangle(alist)
+    # b_bott = find_bottom_range_rectangle(blist)

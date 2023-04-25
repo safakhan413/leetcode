@@ -75,28 +75,31 @@ def rectangle_overlap(a, b):
     a_lt = find_left_range_rectangle(alist)
     b_lt = find_left_range_rectangle(blist)
     #right side of rectangle both lists 
-    a_rt = find_right_range_rectangle(alist)
-    b_rt = find_right_range_rectangle(blist)
+    # a_rt = find_right_range_rectangle(alist)
+    # b_rt = find_right_range_rectangle(blist)
     #top side of rectangle both lists 
     a_top = find_top_range_rectangle(alist)
     b_top = find_top_range_rectangle(blist)
     #bottom side of rectangle both lists 
-    a_bott = find_bottom_range_rectangle(alist)
-    b_bott = find_bottom_range_rectangle(blist)
+    # a_bott = find_bottom_range_rectangle(alist)
+    # b_bott = find_bottom_range_rectangle(blist)
 
     # Realized problem with my logic. This is a good solution but can be simplified. I just needed left and bottom or right and top to check if they overlap
     # 
 
     ltaset = {item[1] for item in a_lt}
     ltbset = {item[1] for item in b_lt}
-    print( 'im lt a range', ltset)
-    topaset = {item[1] for item in a_top}
-    topbset = {item[1] for item in b_top}
+    # print( 'im lt a range', ltset)
+    topaset = {item[0] for item in a_top}
+    topbset = {item[0] for item in b_top}
+    print(ltaset,ltbset, topaset, topbset)
+    print(ltaset & ltbset, topaset & topbset)
 
-
+    boolVal = not(ltaset.isdisjoint(ltbset) and topaset.isdisjoint(topbset))
+    return boolVal
     # print( 'im lt a range',set(itemgetter(1)(a_lt)))
 
-    print( 'im lt b range',rtset)
+    # print( 'im lt b range',rtset)
 
 
     # print(sorted(b, key=listitemgetter(0,1)))
