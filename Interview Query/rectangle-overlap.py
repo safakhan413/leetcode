@@ -18,29 +18,29 @@ def find_left_range_rectangle(alist):
     a_lt_range = []
     for i in range(alist[0][1], alist[1][1]+1):
         # print(i)
-        a_lt_range.append([alist[0][0], i])
+        a_lt_range.append((alist[0][0], i))
     return a_lt_range
 
-def find_right_range_rectangle(alist):
-    a_lt_range = []
-    for i in range(alist[2][1], alist[3][1]+1):
-        # print(i)
-        a_lt_range.append([alist[2][0], i])
-    return a_lt_range
+# def find_right_range_rectangle(alist):
+#     a_lt_range = []
+#     for i in range(alist[2][1], alist[3][1]+1):
+#         # print(i)
+#         a_lt_range.append([alist[2][0], i])
+#     return a_lt_range
 
 def find_top_range_rectangle(alist):
     a_lt_range = []
     for i in range(alist[1][0], alist[3][0]+1):
         # print(i)
-        a_lt_range.append([i, alist[1][1]])
+        a_lt_range.append((i, alist[1][1]))
     return a_lt_range
 
-def find_bottom_range_rectangle(alist):
-    a_lt_range = []
-    for i in range(alist[0][0], alist[2][0]+1):
-        # print(i)
-        a_lt_range.append([i, alist[0][1]])
-    return a_lt_range
+# def find_bottom_range_rectangle(alist):
+#     a_lt_range = []
+#     for i in range(alist[0][0], alist[2][0]+1):
+#         # print(i)
+#         a_lt_range.append([i, alist[0][1]])
+#     return a_lt_range
 
 
 
@@ -63,11 +63,14 @@ def rectangle_overlap(a, b):
     # print(x[0], x[1])
     #find two lowest 
 
-    lt = sorted(a, key=itemgetter(0,1))
-    rt = sorted(b, key=itemgetter(0,1))
-    alist = [list(x) for x in lt]
-    blist = [list(x) for x in rt]
-    print(alist,blist)
+    alist = sorted(a, key=itemgetter(0,1))
+    blist = sorted(b, key=itemgetter(0,1))
+
+    # lt = sorted(a, key=itemgetter(0,1))
+    # rt = sorted(b, key=itemgetter(0,1))
+    # alist = [list(x) for x in lt]
+    # blist = [list(x) for x in rt]
+    # print(alist,blist)
     #left sides of recatangles both lists 
     a_lt = find_left_range_rectangle(alist)
     b_lt = find_left_range_rectangle(blist)
@@ -84,10 +87,16 @@ def rectangle_overlap(a, b):
     # Realized problem with my logic. This is a good solution but can be simplified. I just needed left and bottom or right and top to check if they overlap
     # 
 
+    ltaset = {item[1] for item in a_lt}
+    ltbset = {item[1] for item in b_lt}
+    print( 'im lt a range', ltset)
+    topaset = {item[1] for item in a_top}
+    topbset = {item[1] for item in b_top}
 
 
-    print( 'im bottom range',a_bott)
+    # print( 'im lt a range',set(itemgetter(1)(a_lt)))
 
+    print( 'im lt b range',rtset)
 
 
     # print(sorted(b, key=listitemgetter(0,1)))
