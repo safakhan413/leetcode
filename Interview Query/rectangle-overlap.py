@@ -30,16 +30,16 @@ def find_right_range_rectangle(alist):
 
 def find_top_range_rectangle(alist):
     a_lt_range = []
-    for i in range(alist[0][1], alist[1][1]+1):
-        print(i)
-        a_lt_range.append([alist[0][0], i])
+    for i in range(alist[1][0], alist[3][0]+1):
+        # print(i)
+        a_lt_range.append([i, alist[1][1]])
     return a_lt_range
 
 def find_bottom_range_rectangle(alist):
     a_lt_range = []
-    for i in range(alist[0][1], alist[1][1]+1):
-        print(i)
-        a_lt_range.append([alist[0][0], i])
+    for i in range(alist[0][0], alist[2][0]+1):
+        # print(i)
+        a_lt_range.append([i, alist[0][1]])
     return a_lt_range
 
 
@@ -74,10 +74,19 @@ def rectangle_overlap(a, b):
     #right side of rectangle both lists 
     a_rt = find_right_range_rectangle(alist)
     b_rt = find_right_range_rectangle(blist)
+    #top side of rectangle both lists 
+    a_top = find_top_range_rectangle(alist)
+    b_top = find_top_range_rectangle(blist)
+    #bottom side of rectangle both lists 
+    a_bott = find_bottom_range_rectangle(alist)
+    b_bott = find_bottom_range_rectangle(blist)
+
+    # Realized problem with my logic. This is a good solution but can be simplified. I just needed left and bottom or right and top to check if they overlap
+    # 
 
 
 
-    print( 'im rt range',a_rt)
+    print( 'im bottom range',a_bott)
 
 
 
