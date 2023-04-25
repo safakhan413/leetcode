@@ -27,14 +27,26 @@ def rectangle_overlap(a, b):
     # y = set((-3,2))
     # print(x[0], x[1])
     #find two lowest 
-    # ltlist = [list(x) for x in a]
-    # rtlist = [list(x) for x in b]
-    
-    print(sorted(rtlist, key=itemgetter(0))) 
+
+    lt = sorted(a, key=itemgetter(0,1))
+    rt = sorted(b, key=itemgetter(0,1))
+    alist = [list(x) for x in lt]
+    blist = [list(x) for x in rt]
+    # #left side of reca 
+
+
+    a_lt_range = []
+    # print(alist[0][1])
+
+    # print(alist[0][1], alist[1,1])
+    for i in range(alist[0][1], alist[1][1]):
+
+        a_lt_range.append(alist[0][i])
+    # print(a_lt_range)
+    # print(sorted(b, key=listitemgetter(0,1)))
 
     # print(ltlist, rtlist)
 
-    #choose two min xs to get lt_lt to get coordinates of left side of left
 
 
 
