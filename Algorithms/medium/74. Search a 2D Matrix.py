@@ -1,4 +1,5 @@
 import numpy as np
+
 def binary_search_recursive(array, element, start, end):
     if start > end:
         return -1
