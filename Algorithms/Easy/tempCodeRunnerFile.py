@@ -1,14 +1,6 @@
-def isPalindrome(x):
-    if x<0:
-        return False
-    rev = 0
-    orig = x
-    while x != 0:
-        rev = rev * 10 + x % 10
-        print(rev * 10, x%10, x//10, rev)
-        x //= 10
-    return rev == orig
-
-
-x = 221
-print(isPalindrome(x))
+  dic= set()
+  for n in nums:
+      if n in dic:
+          return True
+      dic.add(n)
+  return False

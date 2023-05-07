@@ -1,5 +1,5 @@
-from collections import Counter
-def containsDuplicate(nums):
+# from collections import Counter
+# def containsDuplicate(nums):
 
     ############### 1st solution not so efficient memory and runtime wise
     # dic = Counter(nums)
@@ -23,12 +23,37 @@ def containsDuplicate(nums):
   #       else:
   #           return True
   #   return False
-    a = Counter(nums)
-    nonDist = [k for k, v in a.items() if v > 1]
-    if len(nonDist) > 0:
-        return True
-    else: return  False
-    # print([k for k, v in a.items() if v > 1])
+#     a = Counter(nums)
+#     nonDist = [k for k, v in a.items() if v > 1]
+#     if len(nonDist) > 0:
+#         return True
+#     else: return  False
+#     # print([k for k, v in a.items() if v > 1])
+
+# # nums = [1,2,3,1]
+# nums = [2,14,18,22,22]
+# val = containsDuplicate(nums)
+# print(val)
+
+# from collections import Counter
+def containsDuplicate(nums):
+      '''Algo:
+      output: return True if at least one value/element is duplicated, flase otherwise
+      Input: nums array
+      Steps:
+        1. 
+      
+      '''
+      # x = Counter(nums)
+      # print(dict(x))
+      # # for k,v in enumerate(dict(x)):
+      # for k,v in (dict(x)).items():
+      #       print(k,v)
+      #       if v >= 2:
+      #             return True
+      #       else:
+      #             return False
+
 
 # nums = [1,2,3,1]
 nums = [2,14,18,22,22]
