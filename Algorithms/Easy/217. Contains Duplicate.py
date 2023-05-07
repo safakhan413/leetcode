@@ -37,13 +37,12 @@
 
 # from collections import Counter
 def containsDuplicate(nums):
-      '''Algo:
-      output: return True if at least one value/element is duplicated, flase otherwise
-      Input: nums array
-      Steps:
-        1. 
-      
-      '''
+  dic= set()
+  for n in nums:
+      if n in dic:
+          return True
+      dic.add(n)
+  return False
       # x = Counter(nums)
       # print(dict(x))
       # # for k,v in enumerate(dict(x)):
