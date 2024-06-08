@@ -23,6 +23,7 @@ def twoSum(nums, target):
     dic = {}
     for i in range(len(nums)):
         if target - nums[i] in dic.keys():
+            print(i, dic[target - nums[i]], dic)
             return [i, dic[target - nums[i]]]
         dic[nums[i]] = i
 

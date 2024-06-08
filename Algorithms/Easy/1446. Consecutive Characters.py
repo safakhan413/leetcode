@@ -28,7 +28,7 @@ def maxPower(s):
     for k, v in x:
         # print(k, list(v))
         length = len(list(v))
-        print(length,max)
+        # print(length,max)
         if length > max:
             max = length
     return max
