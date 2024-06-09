@@ -21,3 +21,15 @@ Output: 4
 
 def searchInsert(nums, target):
     print(nums,target)
+    low = 0
+    high = len(num)-1
+
+    mid = (low+high)//2
+
+    # if 
+
+
+nums = [1,3,5,6],
+target = 5 #output = 2
+ind = searchInsert(nums, target)
+
