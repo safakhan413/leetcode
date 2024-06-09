@@ -28,7 +28,7 @@ def fourSum( nums, target):
     #     for
 
     if len(nums) < 4:
-        return 'not found'
+        return res
     # if len
 
     for i in range(len(nums)-3):
