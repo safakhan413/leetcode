@@ -54,11 +54,13 @@ def islandPerimeter(grid):
 
                 # perimeter = perimeter + 4
                 # if (y[i-1][j] and y[i-1][j] ==1):
+    return perimeter
 
 
 
     # for i, j in y:
     #     print(i,j)
 
-grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
+# grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
+
 x = islandPerimeter(grid)
