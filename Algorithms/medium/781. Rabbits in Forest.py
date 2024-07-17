@@ -38,30 +38,110 @@ def numRabbits(answers):
     
     """
 
-    # To satisfy rule 1, find duplicates in numbers
-    anset = set(answers)
-    count = Counter(answers)
-    print(count)
-    print(anset, 'im anset')
-    minRabbits = 0
-    counterforgt1 = 0
-    for i in anset:
-        if i == 0:
-            minRabbits += count[i]
-            print(minRabbits, 'im in 0')
-        if count[i] > 1:
-            if counterforgt1 == 0 and i !=0:
-                minRabbits = minRabbits + i
-                print(minRabbits, i, 'im in inner >1')
+#     et’s calculate each step for [2,2,2,2,4,3]:
 
-                counterforgt1 = 1
-            else:
-                minRabbits += 1
-            print(minRabbits, 'im in >1')
+# For key = 2:
 
-        elif count[i] == 1:
-            minRabbits += i +1
-            print(minRabbits, 'im in ==1')
+# Group Size: 2 + 1 = 3
+# Frequency: 4
+# Number of Groups Needed: ceil(4 / 3) = 2
+# Rabbits Needed: 3 * 2 = 6
+# python
+# Copy code
+# res += (2 + 1) * ceil(4 / (2 + 1))  # res += 3 * 2
+# # res = 6
+# For key = 4:
+
+# Group Size: 4 + 1 = 5
+# Frequency: 1
+# Number of Groups Needed: ceil(1 / 5) = 1
+# Rabbits Needed: 5 * 1 = 5
+# python
+# Copy code
+# res += (4 + 1) * ceil(1 / (4 + 1))  # res += 5 * 1
+# # res = 6 + 5 = 11
+# For key = 3:
+
+# Group Size: 3 + 1 = 4
+# Frequency: 1
+# Number of Groups Needed: ceil(1 / 4) = 1
+# Rabbits Needed: 4 * 1 = 4
+# python
+# Copy code
+# res += (3 + 1) * ceil(1 / (3 + 1))  # res += 4 * 1
+# # res = 11 + 4 = 15
+# 4. Return the Result
+# python
+# Copy code
+# return res  # The total minimum number of rabbits
+# # res = 15
+# The function returns 15, which is the minimum number of rabbits that satisfies all the given answers.
+
+# Visual Representation
+# Here’s a visual table summarizing the calculations:
+
+# Answer	Group Size	Frequency	Number of Groups	Total Rabbits Needed
+# 2	3	4	2	6
+# 4	5	1	1	5
+# 3	4	1	1	4
+# Total	-	-	-	15
+# Why This Approach Works
+# Group Calculation:
+
+# If a rabbit says "2", they expect a total of 2 + 1 = 3 rabbits of the same color. We must ensure we have complete groups, so we use ceil to handle any remainder.
+# Handling Remainders:
+
+# Using ceil(value / (key + 1)) ensures that even if there are leftover rabbits, they are included in an extra group.
+# Summing Up Rabbits:
+
+# For each answer, the number of required rabbits is the number of groups multiplied by the group size. This approach covers all possibilities and ensures the minimum count.
+# Alternative Simple Solution
+# Here is a more simplified alternative solution without ceil, but it’s generally less readable and involves integer operations:
+
+# python
+# Copy code
+# from typing import List
+# from collections import Counter
+
+# class Solution:
+#     def numRabbits(self, answers: List[int]) -> int:
+#         count = Counter(answers)  # Count occurrences of each answer
+#         res = 0  # Initialize the result variable to accumulate the total number of rabbits
+        
+#         for key, value in count.items():
+#             group_size = key + 1  # The size of each group for the current answer
+#             num_groups = (value + group_size - 1) // group_size  # Integer division to round up
+#             res += num_groups * group_size  # Add the total number of rabbits for this answer
+            
+#         return res  # Return the total minimum number of rabbits
+# Why This Alternative Works
+# Rounding Up Without ceil:
+# (value + group_size - 1) // group_size achieves the same rounding-up effect as ceil(value / group_size).
+# This method is a bit more manual but avoids importing math.ceil.
+# Dry Run of the Alternative Solution
+# Using the same example [2, 2, 2, 2, 4, 3]:
+
+# Count Occurrences:
+
+# {2: 4, 4: 1, 3: 1}
+# Calculate Rabbits:
+
+# For key = 2, group_size = 3:
+# num_groups = (4 + 3 - 1) // 3 = 6 // 3 = 2
+# rabbits_needed = 2 * 3 = 6
+# For key = 4, group_size = 5:
+# num_groups = (1 + 5 - 1) // 5 = 5 // 5 = 1
+# rabbits_needed = 1 * 5 = 5
+# For key = 3, group_size = 4:
+# num_groups = (1 + 4 - 1) // 4 = 4 // 4 = 1
+# rabbits_needed = 1 * 4 = 4
+# Total rabbits needed: 6 + 5 + 4 = 15
+
+    maps = Counter(answers)
+    res = 0
+    for key,value in maps.items():
+        res+=(key+1)*ceil(value/(key+1))
+    return res
 
         # elif count[]
 
