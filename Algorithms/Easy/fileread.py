@@ -22,7 +22,7 @@ pd.concat(df1, df2 , axis=0)
 
 # select first_name
 # From Students As s
-# Where s.first_name
+# Where s.first_name like 'a%'
 # limit 10;
 
 #course Id and student id
@@ -30,7 +30,7 @@ select count(c.id)
 from student As s
 INNER JOIN course as c
 ON s.course_id = c.id
-Group_by c.id
+Group by c.id
 
 
 
