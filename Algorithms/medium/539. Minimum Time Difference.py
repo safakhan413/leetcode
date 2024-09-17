@@ -32,18 +32,12 @@ def findMinDifference(timePoints):
 
     minutes.sort()
     print(minutes)
-    # in_mins = map(int)
     min_diff = math.inf
     for i in range(1,len(timePoints)):
-    #     for j in range(i+1, len(timePoints)):
-            # if math
+
         min_diff = min(min_diff, abs(minutes[i] - minutes[i-1]),1440-minutes[-1] + minutes[0]  )
         print(min_diff)
-            # time_diff = minutes[i] - minutes[j]
 
-            # time_diff = datetime.strptime(timePoints[i], "%H:%M").time() - datetime.strptime(timePoints[j], "%H:%M").time()
-            # print(time_diff)
-    # print(datetime.time("23:59"))
 
 # timePoints = ["23:59","00:00"]
 
