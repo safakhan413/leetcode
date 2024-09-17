@@ -1,0 +1,10 @@
+Withdrawals and other subtractions
+Date Description Amount
+11/30/15 BKOFAMERICA ATM 11/28 #0000000232 WITHDRWL THE MALL ACITY ST -120.00
+12/07/15 Online Banking transfer to CHK 9999 Confirmation# 09810423895 -500.00
+Checks
+Date Check # Amount
+10/14/14 833 -183.00
+10/24/14 835 -61.00
+10/09/14 833 -9.95
+Total withdrawals -$3,120.00
