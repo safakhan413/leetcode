@@ -17,4 +17,26 @@
 
 # Input: nums = [2,3,0,1,4]
 # Output: 2
- 
+
+def min_jumps(nums):
+    n = len(nums)
+    if n == 1:  # If there's only one element, no jumps are needed.
+        return 0
+
+    jumps = 0  # Number of jumps taken
+    reach = 0  # The farthest point we can currently reach
+    current_end = 0  # The farthest point we can reach with the current jump
+
+    for i in range(n - 1):  # Loop through each element, except the last one
+        reach = max(reach, i + nums[i])  # Update the farthest reach
+        
+        # When we reach the current jump's end, we must make another jump
+        if i == current_end:
+            jumps += 1
+            current_end = reach  # Extend the jump range
+            
+            # If we can reach or exceed the last index, we are done
+            if current_end >= n - 1:
+                return jumps
+
+    return jumps
