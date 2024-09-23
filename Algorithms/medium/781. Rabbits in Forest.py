@@ -136,11 +136,11 @@ def numRabbits(answers):
 # num_groups = (1 + 4 - 1) // 4 = 4 // 4 = 1
 # rabbits_needed = 1 * 4 = 4
 # Total rabbits needed: 6 + 5 + 4 = 15
-
+    import math
     maps = Counter(answers)
     res = 0
     for key,value in maps.items():
-        res+=(key+1)*ceil(value/(key+1))
+        res+=(key+1)*math.ceil(value/(key+1))
     return res
 
         # elif count[]
