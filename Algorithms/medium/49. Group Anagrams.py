@@ -34,7 +34,13 @@
 def groupAnagrams(strs) :
     anagrams_dict = {}
     for i in strs:
-        
+        k = ''.join(sorted(i))
+        # if k not in anagrams_dict.keys():
+        anagrams_dict[k] = anagrams_dict.get(k, [])
+        anagrams_dict[k].append(i)
+    # print(list(anagrams_dict.values()))
+    return list(anagrams_dict.values())
 
 strs = ["eat","tea","tan","ate","nat","bat"]
+groupAnagrams(strs)
 
