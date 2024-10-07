@@ -25,10 +25,7 @@ def topKFrequent(words, k):
 
     print(words,k)
     counter = Counter(words)
-    ## find indx of max not a good approach 
-    #create a counter
-    # a = sorted(Counter(words), key: lambda: a.Value())
-    # a = sorted(counter, key= lambda words: counter.get(words), reverse=True)
+
     a = sorted(counter, key= lambda word: (-counter[word], word))
 
     # a = OrderedDict(Counter(words))
